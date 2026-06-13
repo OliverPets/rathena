@@ -18713,7 +18713,7 @@ BUILDIN_FUNC(getmonsterinfo)
 	std::shared_ptr<s_mob_db> mob = nullptr;
 
 	if (script_isstring(st, 2))
-		mob = mobdb_search_aegisname(script_getstr(st, 2));
+		mob = mob_db.find(mobdb_searchname(script_getstr(st, 2)));
 	else {
 		uint16 mob_id = script_getnum(st, 2);
 
